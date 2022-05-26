@@ -1,2 +1,53 @@
 # civi plan
 
+## choose editor + programming language
+- VSCode + Python
+## choose library
+- PyGame
+## create a list of features
+- Objective: Create a functioning civilization - advance technologically, have many people who are healthy & happy
+- Player's role: assign villagers to tasks
+- Lose condition: everyone dies (0 health)
+- User interface
+    - Window with canvas & sprites moving around
+    - Mapping tasks to animations (e.g. fishing vs. foraging)
+    - Day/night environment
+        - How the island looks
+    - Island/environment, which has default objects to interact with (bushes, fire pit, etc.)
+        - animations (waves, fire moving, etc.)
+        - stockpile grows in size as food stores increase
+        - farm grows plants (responds to internal stats of farm, how much time user spends doing job)
+    - People
+        - people aging (sprite change after age stat)
+        - How stats are displayed, increase/decrease in skill level/health changes bars
+        - Carrying items/performing tasks sprites
+        - Idling sprites
+        - Dead sprites
+    - Stats on structures (internal)
+    - How random events are displayed, have choices
+    - Alerts when milestones are passed
+    - GUI: Buttons to view the map, see progress in advancements, see achievements, go back to menu
+- Environmental objects
+    - Food sources (bushes: berries, ocean: fish/water, mushrooms, coconut trees, plants)
+    - Job sites (farm, stone mine, ruins, plots, houses, lab, desk)
+    - Random locations (ruins, lagoon, etc.)
+- People objects
+    - Stats
+        - Jobs/tasks
+            - Farmer, healer, builder, parent, chief, researcher, cook
+            - Skill level
+            - Randomly stop doing a task (e.g. failure, day/night) & switch activities
+        - Hunger
+        - Health
+        - Happiness
+    - Age
+        - capabilities change (able to do certain jobs/tasks)
+- Random events
+    - Occur at any time point in the game
+    - Occur while performing a job/task
+    - Can impact resources, abilities, etc.
+- Resources
+    - Population (metric)
+    - Food (can be spent, affects happiness)
+        - Raw fish can be turned into cooked fish by having a villager
+    - Technology (spend to unlock more technologies)
