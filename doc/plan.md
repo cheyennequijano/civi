@@ -29,13 +29,6 @@
     - How random events are displayed, have choices
     - Alerts when milestones are passed
     - GUI: Buttons to view the map, see progress in advancements, see achievements, go back to menu
-- Environmental objects
-    - Food sources (bushes: berries, ocean: fish/water, mushrooms, coconut trees, plants)
-        - Livestock: pigs
-    - Job sites (farm, stone mine, ruins, plots, houses, lab, desk)
-        - Sprite changes as technology improves/achievement level increases
-    - Random locations (ruins, lagoon, etc.)
-    - Cemetery
 - Villager objects
     - Clothes
         - Determined at childhood & does not deteriorate/need to be replenished
@@ -140,10 +133,24 @@
                 - Can be sick/healed
         - Adult
             - Can do any task
-- Random events
-    - Occur at any time point in the game
-    - Occur while performing a job/task
-    - Can impact resources, abilities, etc.
+- Environmental objects
+    - Food sources (bushes: berries, ocean: fish/water, mushrooms, coconut 
+        trees, farm: livestock, crops)
+        - Objects have stats
+        - Time regeneration (rate), can be depleted (berry bush, coconut 
+            trees, fish/water (high rate))
+        - Random (e.g. mushroom clusters (there is some initial amount, 
+            after all mushrooms are gathered, pop up around the environment 
+            randomly))
+        - Work (e.g. farming)
+    - Farming
+    
+    - Healing (plants)
+        - Time regeneration
+    - Job sites (farm, stone mine, ruins, plots, houses, lab, desk)
+        - Sprite changes as technology improves/achievement level increases
+    - Random locations (ruins, lagoon, etc.)
+    - Cemetery
 - Resources
     - Population (metric)
     - Food (can be spent, affects happiness)
@@ -151,3 +158,7 @@
             - Raw: Fish/seafood, livestock, crops
             - Ready-to-eat: Berries, mushrooms, cooked
     - Technology (spend to unlock more technologies)
+- Random events
+    - Occur at any time point in the game
+    - Occur while performing a job/task
+    - Can impact resources, abilities, etc.
