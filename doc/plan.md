@@ -45,7 +45,7 @@
                         environmental structure (e.g. confused, cleaning, 
                         researching)
             - Skill level
-                - Impacts speed/output of task
+                - Impacts speed, success rate of task
                 - People can be skilled in multiple jobs
                 - Consider decrease in skills
                     - Age
@@ -134,6 +134,17 @@
         - Adult
             - Can do any task
 - Environmental objects
+    - Job sites (farm, firepit, stone mine, ruins, plots, houses, lab, desk)
+        - Sprite changes as technology improves/achievement level increases
+    - Random locations (ruins, lagoon, etc.)
+        - Need to be cleaned/explored by villager(s) to be usable
+        - If unexplored, villager explores, if explored, do some happiness-
+            producing task
+        - Does not affect skill
+    - Cemetery
+        - Villager automatically brings/is manually brought to dead villager 
+            (bones) to burial site, results in tombstone
+        - If not buried, risk of disease for villagers increases
     - Food sources (bushes: berries, ocean: fish/water, mushrooms, coconut 
         trees, farm: livestock, crops)
         - Objects have stats
@@ -143,22 +154,84 @@
             after all mushrooms are gathered, pop up around the environment 
             randomly))
         - Work (e.g. farming)
+- Jobs/tasks
     - Farming
-    
+        - Farmer/villager does a task to farmland (default structure) & obtains 
+            crops that are added to the stockpile of food
+        - Obtained after progress meter is completed, i.e., some number of 
+            tasks is completed by farmers
+            - One or more farmers can work on a task to speed up its completion
+            - Filled continuously as the farmers do the task
+            - Some max number of farmers working on the initial plot of land
+        - With advancements in technology, can increase the size/capacity of 
+            the farmland
+            - Requires a builder to modify the farm
+    - Cooking
+        - Firepit, requires wood & people to make the fire (task)
+            - Unlimited once unlocked
+        - Task involves taking some amount of raw food from the stockpile, 
+            going to the fire, cooking food, returning cooked food to the 
+            stockpile
+        - Individual task
+        - Some max number of cooks at the firepit
+    - Gathering
+        - Individual task
+        - Task involves going to a mushroom cluster or the berry bush, getting 
+            food, bringing it to the stockpile
+    - Fishing
+        - Individual task
+        - Task involves going to the ocean, fishing, bringing fish to the 
+            stockpile
     - Healing (plants)
         - Time regeneration
-    - Job sites (farm, stone mine, ruins, plots, houses, lab, desk)
-        - Sprite changes as technology improves/achievement level increases
-    - Random locations (ruins, lagoon, etc.)
-    - Cemetery
+        - Healer needs to study the plant before it can be used for healing
+        - Task involves studying sick person, gathering plant, using plant to 
+            heal
+            - Less skilled healers choose incorrect plant & do not heal sick
+            - One healer to one sick villager
+        - Some illnesses can go away on their own, if that occurs while the 
+            healer is doing the task, healer stops task
+    - Building
+        - Virtually unlimited rocks, time regeneration for wood
+        - Builder needs to explore the quarry & wood source before it can be 
+            used for building
+        - Task involves collecting stone (quarry), wood (trees, driftwood), 
+            building on plot (default structure), replanting trees
+            - Plot can be housing, farm, lab, etc. throughout the island
+            - One or more builders can work on a task to speed up its completion
+            - Filled continuously as the builders do the task
+            - Some max number of builders working on the initial plot of land 
+    - Breeding
+        - Once house is built, people can breed
+        - Need one male villager & one female villager to do the task
+        - Automatically fail task if its an invalid pairing (child, same sex, 
+            etc.)
+        - Task involves going to a house, no longer visible, & leave with a 
+            newborn
+        - Eventually population will exceed food replenishment
+    - Religious teaching
+        - Task involves going to the ampitheatre, sharing a message
+    - Researching
+        - Research bench next to every job site
+            - Increases progress bar for next level of technology
+            - Research barrier until research lab is unlocked
+        - Lab unlocked after cleaned
 - Resources
     - Population (metric)
+        - Increases after successful breeding
+        - Decreases after death of villager
     - Food (can be spent, affects happiness)
         - Jobs produce raw or ready-to-eat food
             - Raw: Fish/seafood, livestock, crops
             - Ready-to-eat: Berries, mushrooms, cooked
-    - Technology (spend to unlock more technologies)
+    - Technology (advancements in farming, construction, medicine, fertility, 
+        spiritual)
+        - Unlock more technologies once progress bar is completed for each 
+            category
 - Random events
     - Occur at any time point in the game
     - Occur while performing a job/task
     - Can impact resources, abilities, etc.
+    - E.g. Should the villager eat the strange fish? Discovers a food source or 
+        gets sick
+## decide MVP
