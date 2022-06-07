@@ -5,7 +5,8 @@
 ## choose library
 - PyGame
 ## create a list of features
-- Objective: Create a functioning civilization - advance technologically, have many people who are healthy & happy
+- Objective: Create a functioning civilization - advance technologically, have 
+    many people who are healthy & happy
 - Player's role: assign villagers to tasks
 - Lose condition: everyone dies (0 health &/or 0 hunger)
 - User interface
@@ -13,14 +14,17 @@
     - Mapping tasks to animations (e.g. fishing vs. foraging)
     - Day/night environment
         - How the island looks
-    - Island/environment, which has default objects to interact with (bushes, fire pit, etc.)
+    - Island/environment, which has default objects to interact with (bushes, 
+        fire pit, etc.)
         - animations (waves, fire moving, etc.)
         - stockpile grows in size as food stores increase
-        - farm grows plants (responds to internal stats of farm, how much time user spends doing job)
+        - farm grows plants (responds to internal stats of farm, how much time 
+            user spends doing job)
         - How different food is depicted
     - People
         - people aging (sprite change after age stat)
-        - How stats are displayed, increase/decrease in skill level/health changes bars
+        - How stats are displayed, increase/decrease in skill level/health 
+            changes bars
         - Carrying items/performing tasks sprites
         - Idling sprites
         - Dead sprites
@@ -28,7 +32,8 @@
     - Stats on structures (internal)
     - How random events are displayed, have choices
     - Alerts when milestones are passed
-    - GUI: Buttons to view the map, see progress in advancements, see achievements, go back to menu
+    - GUI: Buttons to view the map, see progress in advancements, see 
+        achievements, go back to menu
 - Villager objects
     - Clothes
         - Determined at childhood & does not deteriorate/need to be replenished
@@ -37,7 +42,8 @@
         - E.g. worrying, playing, giving up, etc.
     - Stats
         - Jobs/tasks
-            - Farmer, gatherer, fisher, builder, healer, parent, cook, chief, researcher
+            - Farmer, gatherer, fisher, builder, healer, parent, cook, chief, 
+                researcher
                 - Requirements/conditions: environmental structure, technology 
                     unlock, achievement unlock (global boolean) or clean lab, 
                     etc.
@@ -54,8 +60,8 @@
                 activities
                 - ambient: random (some storms, breaks for celebrations), 
                     day/night)
-                    - People do not gather/fish/farm if untrained & will worry about food 
-                        if the stockpile is low
+                    - People do not gather/fish/farm if untrained & will worry 
+                        about food if the stockpile is low
                 - local (semi-ambient): e.g. event that only affects farmers, 
                     area, some storms
                 - individual: death, hunger, health, failure because of skill
@@ -63,7 +69,8 @@
                         increases
                 - short task that interrupts other task (celebrations)
             - Queuing tasks (automatic)
-                - Even low skilled people will gather/fish/farm if food stores are low
+                - Even low skilled people will gather/fish/farm if food stores 
+                    are low
                 - Maybe based on the needs of the community
             - Small celebration after finishing a task (part of task 
                 completion)
@@ -124,7 +131,8 @@
                 - No tasks (nursed by mother for food)
                     - Mother is sick: hunger is replenished more slowly
                     - Death of mother: babies can be fed regular food, but has 
-                        a higher probability of sickness generally in their life
+                        a higher probability of sickness generally in their 
+                        life
                 - Carried by mother (sprite)
                 - Can be sick/healed
             - Child (2-12)
@@ -198,7 +206,8 @@
         - Task involves collecting stone (quarry), wood (trees, driftwood), 
             building on plot (default structure), replanting trees
             - Plot can be housing, farm, lab, etc. throughout the island
-            - One or more builders can work on a task to speed up its completion
+            - One or more builders can work on a task to speed up its 
+                completion
             - Filled continuously as the builders do the task
             - Some max number of builders working on the initial plot of land 
     - Breeding
@@ -235,3 +244,39 @@
     - E.g. Should the villager eat the strange fish? Discovers a food source or 
         gets sick
 ## decide MVP
+- UI
+    - Top-down view of island (one canvas)
+        - Terrain
+        - Villagers
+        - Job sites
+    - Display resource stats
+        - Population
+        - Food
+        - Technology
+    - Click on villager to view villager stats
+        - Popup window display that takes up the whole screen
+        - Age
+        - Hunger
+        - Health
+        - Skills (only one active, gathering)
+    - Mouse controls for player to change villager's position
+        - Two choices
+            - Move villager to some structure, it interacts with it
+            - Move villager to no structure, override villager's initial task & 
+                assign it to idle
+- Backend
+    - Things the backend can receive from the frontend
+        - Orders for villagers to go to a position
+    - Preset villager stats
+    - Things that happen as time progresses (natural processes)
+        - Age increases
+        - Hunger decreases
+        - Villager moves
+        - Death if age is at some number and/or hunger is at 0
+    - One food source: berry bush (unlimited)
+        - Villagers interact with berry bush
+        - Food resource stat increases
+        - Skill of villager performing task increases upon task completion
+        - Villager proceeds with task until interrupted
+    - One idle task: look at berry bush
+        - Automatic task
