@@ -252,7 +252,7 @@
     - Display resource stats
         - Population
         - Food
-        - Technology
+        - Technology (inert)
     - Click on villager to view villager stats
         - Popup window display that takes up the whole screen
         - Age
@@ -280,3 +280,26 @@
         - Villager proceeds with task until interrupted
     - One idle task: look at berry bush
         - Automatic task
+## high-level design plan
+- Frontend/UI (visualizers)
+    - Background
+    - Berry bush
+    - Stockpile
+    - Stockpile GUI
+    - Population GUI
+    - Technology GUI (inert)
+    - Villagers
+- Backend
+    - Game world
+        - Owns every structure + villagers
+        - Do something every game tick
+            - Tick down hunger
+            - Tick down food as a resource
+            - Tick up age
+    - Berry bush
+    - Stockpile (owns resources)
+        - Increase when berries are collected, reduced when stockpile is 
+            depleted
+    - Villagers
+        - Update hunger, age
+        - Reduce the stockpile of food, increase hunger status
