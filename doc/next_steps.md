@@ -14,7 +14,12 @@ completed on 08.10.2022
 
 ## Draw multiple sprites
 
-completed on
+completed on 09.09.2022
+
+* [x] Draw a sprite whose location we can control by parameter (set_position)
+  * [x] did the bloke way (the king edits its rect's attributes directly)
+  * [x] did the object oriented way (the rect edits its attributes by the king calling update on rect)
+* [x] draw two kings
 
 ## Sprites can come into existence & go away
 
