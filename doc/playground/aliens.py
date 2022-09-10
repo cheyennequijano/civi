@@ -85,14 +85,18 @@ class Player(pg.sprite.Sprite):
         self.facing = -1
 
     def move(self, direction):
+        # Set movement direction based on input (-1 or 1)
         if direction:
             self.facing = direction
         self.rect.move_ip(direction * self.speed, 0)
         self.rect = self.rect.clamp(SCREENRECT)
+        # Swaps out the sprite based on direction
         if direction < 0:
             self.image = self.images[0]
         elif direction > 0:
             self.image = self.images[1]
+            
+
         self.rect.top = self.origtop - (self.rect.left // self.bounce % 2)
 
     def gunpos(self):
