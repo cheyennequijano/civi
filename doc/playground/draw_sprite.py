@@ -23,6 +23,11 @@ class King(pg.sprite.Sprite):
         self.image = self.images[0]
         self.rect = self.image.get_rect()
 
+    def set_position(self, x, y) -> None:
+        width = self.rect.width
+        height = self.rect.height
+        self.rect.update(x, y, width, height)
+
 if __name__ == "__main__":
     # initialize pygame
     pg.init()
@@ -45,7 +50,9 @@ if __name__ == "__main__":
     #   kings, but it doesn't get used until
     King.containers = kings
     #   here
-    King()
+    king1 = King()
+    king2 = King()
+    king2.set_position(50, 30)
     # dirty means something has been changed but the changes haven't been 
     #   applied/saved yet
     # draw the sprites in the kings group to the background
